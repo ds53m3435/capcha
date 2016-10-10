@@ -41,22 +41,19 @@ describe('Captcha App', () => {
     describe('Pattern 1', () => {
         let pattern = 1;
         it('should return "1 + One" when input is 1,1,1,1', () => {
-            let app = new Captcha(pattern,1,1,1)
-            expect(app.generate()).toEqual('1 + One')
+            expect(CreateApp(pattern,1,1,1).generate()).toEqual('1 + One')
         })
     })
     describe('Pattern 2', () => {
         let pattern = 2;
         it('should return "Nine + 9" when input is 2,1,9,9', () => {
-            let app = new Captcha(pattern,1,9,9)
-            expect(app.generate()).toEqual('Nine + 9')
+            expect(CreateApp(pattern,1,9,9).generate()).toEqual('Nine + 9')
         })
         it('should return "Nine - 9" when input is 2,2,9,9', () => {
-            let app = new Captcha(pattern,2,9,9)
-            expect(app.generate()).toEqual('Nine - 9')
+            expect(CreateApp(pattern,2,9,9).generate()).toEqual('Nine - 9')
         })
     })
 })
-/*function CreateApp(Pattern, Operator, LeftOperator, RightOperator) {
-  new Captcha(Pattern, Operator, LeftOperator, RightOperator)
-}*/
+function CreateApp(Pattern, Operator, LeftOperator, RightOperator) {
+  return new Captcha(Pattern, Operator, LeftOperator, RightOperator);
+}
