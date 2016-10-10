@@ -26,12 +26,12 @@ function rightOperator(P,R) {
 }
 function leftOperator(P,L) {
     this.toString = function(){
-      if(P === 2) {
-        let left = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine'];
+      if(P === 1){
+        let left = ['0','1','2','3','4','5','6','7','8','9'];
         return left[L];
       }
-      else if(P === 1){
-        let left = ['0','1','2','3','4','5','6','7','8','9'];
+      else if(P === 2) {
+        let left = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine'];
         return left[L];
       }
     }
@@ -56,6 +56,9 @@ describe('Captcha App', () => {
         })
         it('should return "Eight * 4" when input is 2,3,8,4', () => {
             expect(CreateApp(pattern,3,8,4).generate()).toEqual('Eight * 4')
+        })
+        it('should return "Eight / 8" when input is 2,4,8,8', () => {
+            expect(CreateApp(pattern,4,8,8).generate()).toEqual('Eight / 8')
         })
     })
 })
