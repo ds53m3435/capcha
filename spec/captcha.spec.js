@@ -41,8 +41,7 @@ describe('Captcha App', () => {
     describe('Pattern 1', () => {
         let pattern = 1;
         it('should return "1 + One" when input is 1,1,1,1', () => {
-            let app = new Captcha(pattern,1,1,1 )
-            expect(app.generate()).toEqual('1 + One')
+            expect(CreateApp(pattern,1,1,1).generate()).toEqual('1 + One')
         })
         /*it('should return "2 + Two" when input is 1,1,2,2', () => {
             let app = new Captcha(pattern,1,2,2 )
@@ -65,6 +64,6 @@ describe('Captcha App', () => {
         })
     })*/
 })
-function app(Pattern, Operator, LeftOperator, RightOperator) {
+function CreateApp(Pattern, Operator, LeftOperator, RightOperator) {
   new Captcha(Pattern, Operator, LeftOperator, RightOperator)
 }
