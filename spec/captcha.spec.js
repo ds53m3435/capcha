@@ -1,11 +1,9 @@
 function Captcha(Pattern, Operator, LeftOperator, RightOperator){
     this.generate = function(){
-      if(Pattern === 1) {
         let Oper = new OP(Operator);
         let Right = new rightOperator(Pattern,RightOperator);
         let Left = new leftOperator(Pattern,LeftOperator);
         return Left+' '+Oper+' '+Right;
-      }
     }
 }
 function OP(O) {
@@ -45,6 +43,17 @@ describe('Captcha App', () => {
         it('should return "1 + One" when input is 1,1,1,1', () => {
             let app = new Captcha(pattern,1,1,1)
             expect(app.generate()).toEqual('1 + One')
+        })
+    })
+    describe('Pattern 2', () => {
+        let pattern = 2;
+        it('should return "Nine + 9" when input is 2,1,9,9', () => {
+            let app = new Captcha(pattern,1,9,9)
+            expect(app.generate()).toEqual('Nine + 9')
+        })
+        it('should return "Nine - 9" when input is 2,2,9,9', () => {
+            let app = new Captcha(pattern,2,9,9)
+            expect(app.generate()).toEqual('Nine - 9')
         })
     })
 })
