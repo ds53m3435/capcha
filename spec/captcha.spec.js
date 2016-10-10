@@ -60,6 +60,9 @@ describe('Captcha App', () => {
         it('should return "Eight / 8" when input is 2,4,8,8', () => {
             expect(CreateApp(pattern,4,8,8).generate()).toEqual('Eight / 8')
         })
+        it('should return "Four / 4" when input is 2,4,4,4', () => {
+            expect(CreateApp(pattern,4,4,4).generate()).toEqual('Four / 4')
+        })
     })
 })
 function CreateApp(Pattern, Operator, LeftOperator, RightOperator) {
