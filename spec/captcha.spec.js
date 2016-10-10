@@ -36,7 +36,6 @@ function leftOperator(P,L) {
       }
     }
 }
-
 describe('Captcha App', () => {
     describe('Pattern 1', () => {
         let pattern = 1;
@@ -51,6 +50,12 @@ describe('Captcha App', () => {
         })
         it('should return "Nine - 9" when input is 2,2,9,9', () => {
             expect(CreateApp(pattern,2,9,9).generate()).toEqual('Nine - 9')
+        })
+        it('should return "Five - 5" when input is 2,2,5,5', () => {
+            expect(CreateApp(pattern,2,5,5).generate()).toEqual('Five - 5')
+        })
+        it('should return "Eight * 4" when input is 2,3,8,4', () => {
+            expect(CreateApp(pattern,3,8,4).generate()).toEqual('Eight * 4')
         })
     })
 })
