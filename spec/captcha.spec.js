@@ -42,6 +42,27 @@ describe('Captcha App', () => {
         it('should return "1 + One" when input is 1,1,1,1', () => {
             expect(CreateApp(pattern,1,1,1).generate()).toEqual('1 + One')
         })
+        it('should return "8 * Eight" when input is 1,3,8,8', () => {
+            expect(CreateApp(pattern,3,8,8).generate()).toEqual('8 + Eight')
+        })
+        it('should return "4 * Four" when input is 1,3,4,4', () => {
+            expect(CreateApp(pattern,3,4,4).generate()).toEqual('4 * Four')
+        })
+        it('should return "1 * One" when input is 1,3,1,1', () => {
+            expect(CreateApp(pattern,3,1,1).generate()).toEqual('1 * One')
+        })
+        it('should return "7 - Seven" when input is 1,2,7,7', () => {
+            expect(CreateApp(pattern,2,7,7).generate()).toEqual('7 - Seven')
+        })
+        it('should return "5 - Five" when input is 1,2,5,5', () => {
+            expect(CreateApp(pattern,2,5,5).generate()).toEqual('5 - Five')
+        })
+        it('should return "3 + Three" when input is 1,1,3,3', () => {
+            expect(CreateApp(pattern,1,3,3).generate()).toEqual('3 + Three')
+        })
+        it('should return "6 - Six" when input is 1,2,6,6', () => {
+            expect(CreateApp(pattern,2,6,6).generate()).toEqual('6 - Six')
+        })
     })
     describe('Pattern 2', () => {
         let pattern = 2;
@@ -62,6 +83,15 @@ describe('Captcha App', () => {
         })
         it('should return "Four / 4" when input is 2,4,4,4', () => {
             expect(CreateApp(pattern,4,4,4).generate()).toEqual('Four / 4')
+        })
+        it('should return "Zero * 0" when input is 2,3,0,0', () => {
+            expect(CreateApp(pattern,3,0,0).generate()).toEqual('Zero * 0')
+        })
+        it('should return "Seven + 1" when input is 2,1,7,7', () => {
+            expect(CreateApp(pattern,1,7,7).generate()).toEqual('Seven + 7')
+        })
+        it('should return "Six - 6" when input is 2,2,6,6', () => {
+            expect(CreateApp(pattern,2,6,6).generate()).toEqual('Six - 6')
         })
     })
 })
