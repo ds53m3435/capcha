@@ -43,7 +43,7 @@ describe('Captcha App', () => {
             expect(CreateApp(pattern,1,1,1).generate()).toEqual('1 + One')
         })
         it('should return "8 * Eight" when input is 1,3,8,8', () => {
-            expect(CreateApp(pattern,3,8,8).generate()).toEqual('8 + Eight')
+            expect(CreateApp(pattern,3,8,8).generate()).toEqual('8 * Eight')
         })
         it('should return "4 * Four" when input is 1,3,4,4', () => {
             expect(CreateApp(pattern,3,4,4).generate()).toEqual('4 * Four')
