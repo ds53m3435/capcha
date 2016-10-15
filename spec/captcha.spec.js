@@ -11,7 +11,7 @@ function OP(O) {
 function rightOperator(P, R) {
     this.toString = function() {
         if (P === 1) return letter[R];
-         else if (P === 2)  return R; 
+         else if (P === 2)  return R;
      }}
 function leftOperator(P, L) {
     this.toString = function() {
@@ -44,6 +44,9 @@ describe('Captcha App', () => {
         })
         it('should return "6 - Six" when input is 1,2,6,6', () => {
             expect(CreateApp(pattern,2,6,6).generate()).toEqual('6 - Six')
+        })
+        it('should return "9 / Three" when input is 1,4,9,3', () => {
+            expect(CreateApp(pattern,4,9,3).generate()).toEqual('9 / Three')
         })
     })
     describe('Pattern 2', () => {
